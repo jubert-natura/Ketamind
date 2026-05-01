@@ -1,0 +1,98 @@
+/* ============================================================
+   Button — ketaMIND
+   Pill shape · 4% letter-spacing · subtle lift on hover
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 0;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    background-position var(--duration-slow) var(--ease-standard);
+}
+
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible {
+  outline: 2px solid var(--holo-periwinkle);
+  outline-offset: 2px;
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Sizes ───────────────────────────────────────────────── */
+.btn--lg { padding: 16px 28px; font-size: 13px; }
+.btn--md { padding: 12px 22px; font-size: 12px; }
+.btn--sm { padding: 8px 16px;  font-size: 11px; }
+
+/* ── Variants ────────────────────────────────────────────── */
+.btn--primary {
+  background: var(--ink-primary);
+  color: var(--paper-white);
+}
+.btn--primary:hover {
+  background: #2A2A30;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn--holo {
+  position: relative;
+  color: var(--ink-primary);
+  background: var(--holo-spectrum);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+}
+.btn--holo:hover {
+  background-position: 100% 50%;
+  box-shadow: var(--shadow-halo);
+}
+
+.btn--lime {
+  background: var(--accent-lime);
+  color: var(--ink-primary);
+}
+.btn--lime:hover {
+  box-shadow: 0 8px 24px rgba(212, 242, 92, 0.4);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink-primary);
+  box-shadow: inset 0 0 0 1px var(--ink-primary);
+}
+.btn--outline:hover {
+  background: var(--ink-primary);
+  color: var(--paper-white);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-primary);
+}
+.btn--ghost:hover {
+  background: var(--paper-warm);
+}
+
+/* ── Trailing arrow ──────────────────────────────────────── */
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+.btn:hover .btn__arrow { transform: translateX(3px); }
